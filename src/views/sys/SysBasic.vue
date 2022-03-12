@@ -6,7 +6,7 @@
                 <el-tab-pane label="职位管理" name="PosManage">职位管理</el-tab-pane>
                 <el-tab-pane label="职称管理" name="JoblevelManage">职称管理</el-tab-pane>
                 <el-tab-pane label="奖惩规则" name="EcManage">奖惩规则</el-tab-pane>
-                <el-tab-pane label="权限组" name="AuthManage">权限组</el-tab-pane>
+                <el-tab-pane label="权限管理" name="AuthManage">权限管理</el-tab-pane>
             </el-tabs>
         </template>
     </div>

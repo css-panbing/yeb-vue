@@ -145,14 +145,7 @@ export default {
             }else {
                 Message.error({message: '职位名称不能为空！！'})
             }
-        },
-        handleSizeChange(val){
-            Message.info("改变每页条数为："+val);
-        },
-        handleCurrentChange(val){
-            Message.info("跳转到"+val+"页");
         }
-
     }
 }
 </script>

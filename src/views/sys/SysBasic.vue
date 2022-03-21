@@ -32,7 +32,7 @@ export default {
     name: "SysBasic",
     data(){
         return{
-            activeName:'PermissionManage'
+            activeName:'DepManage'
         }
     },
     components: {

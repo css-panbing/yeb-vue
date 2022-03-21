@@ -12,6 +12,7 @@ export default new Vuex.Store({
     mutations:{
         //初始化路由
         initRoutes(state, data){
+            console.log("初始化路由信息:"+JSON.stringify(data))
             state.routes = data;
         }
     }

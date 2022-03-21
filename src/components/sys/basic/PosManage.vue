@@ -31,15 +31,6 @@
                     </template>
                 </el-table-column>
             </el-table>
-            <el-pagination
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-                :current-page="page.currentPage"
-                :page-sizes="[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]"
-                :page-size="page.pageSize"
-                layout="prev, pager, next, total, jumper, sizes"
-                :total="page.totalRows">
-            </el-pagination>
         </div>
         <el-dialog title="编辑职位" :visible.sync="dialogFormVisible" width="25%">
             <div>
@@ -52,8 +43,8 @@
                            active-text="已启用" inactive-text="已禁用"></el-switch>
             </div>
             <span slot="footer" class="dialog-footer">
-                <el-button size="small" @click="dialogFormVisible = false">取 消</el-button>
                 <el-button size="small" type="primary" @click="doUpdate">确 定</el-button>
+                <el-button size="small" @click="dialogFormVisible = false">取 消</el-button>
             </span>
         </el-dialog>
     </div>
@@ -67,11 +58,6 @@ export default {
     name: "PosManage",
     data(){
         return{
-            page: {
-                currentPage: 1,
-                pageSize: 10,
-                totalRows: 0,
-            },
             pos: {
                 name: ''
             },
@@ -113,11 +99,9 @@ export default {
             })
         },
         initPositions(){
-            var pageQuery = new Array();
-            pageQuery.push(this.page)
-            getRequest("/system/cfg/position/", {pageQuery: JSON.stringify(pageQuery)}).then(resp=>{
+            getRequest("/system/cfg/position/").then(resp=>{
                 if(resp){
-                    this.positions = resp.data;
+                    this.positions = resp;
                 }
             })
         },

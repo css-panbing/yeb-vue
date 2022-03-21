@@ -15,7 +15,7 @@
                     <div slot="header" class="clearfix">
                         <span>可访问资源</span>
                         <el-button type="danger" style="float: right; padding: 0;" icon="el-icon-delete"
-                                   title="删除角色" @click="deleteRole"></el-button>
+                                   title="删除角色" @click="deleteRole(item.nameZh)"></el-button>
                     </div>
                     <div>
                         <!--通过default-expanded-keys和default-checked-keys设置默认展开和默认选中的节点。需要注意的是，此时必须设置node-key，其值为节点数据中的一个字段名，该字段在整棵树中是唯一的。-->
@@ -36,6 +36,7 @@
 
 <script>
 import {deleteRequest, getRequest} from "@/utils/api";
+import {Message, MessageBox} from "element-ui";
 
 export default {
     name: "PermissionManage",
@@ -61,12 +62,20 @@ export default {
     },
     methods:{
         //删除角色信息
-        deleteRole(){
-            deleteRequest("/system/basic/permission/role/"+this.roleId).then(resp=>{
-                if(resp){
-                    this.initRoles();
-                }
-            })
+        deleteRole(name){
+            MessageBox.confirm('此操作将永久删除【'+name+'】角色，是否继续？', '提示', {
+                confirmButtonText: '确认',
+                cancelButtonText: '取消',
+                type: 'warning',
+            }).then(() => {
+                deleteRequest("/system/basic/permission/role/"+this.roleId).then(resp=>{
+                    if(resp){
+                        this.initRoles();
+                    }
+                })
+            }).catch(() => {
+                Message.info({type: 'info', message: '已取消删除'})
+            });
         },
         //初始化所有的角色信息
         initRoles(){

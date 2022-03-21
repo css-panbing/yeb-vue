@@ -61,8 +61,8 @@
                            active-text="已启用" inactive-text="已禁用"></el-switch>
             </div>
             <span slot="footer" class="dialog-footer">
-                <el-button size="small" @click="dialogFormVisible = false">取 消</el-button>
                 <el-button size="small" type="primary" @click="doUpdate">确 定</el-button>
+                <el-button size="small" @click="dialogFormVisible = false">取 消</el-button>
             </span>
         </el-dialog>
     </div>

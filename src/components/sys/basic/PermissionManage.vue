@@ -68,10 +68,10 @@ export default {
     methods:{
         //新增角色
         addRole(){
-            if(this.role.nameZh == ''){
-                Message.error({message: "角色中文名称不能为空！"});
-            }else if(this.role.name == ''){
+            if(this.role.name == ''){
                 Message.error({message: "角色英文名称不能为空！"});
+            }else if(this.role.nameZh == ''){
+                Message.error({message: "角色中文名称不能为空！"});
             }else{
                 postRequest("/system/basic/permission/role/", this.role).then(resp=>{
                     if(resp){

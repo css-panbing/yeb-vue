@@ -65,7 +65,7 @@ export default {
     },
     computed: {
         routes() {
-            console.log("路由："+JSON.stringify(this.$store.state.routes))
+            // console.log("路由："+JSON.stringify(this.$store.state.routes))
             return this.$store.state.routes;
         },
     },

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="background">
         <el-form :rules="rules"
                  v-loading="loading"
                  element-loading-text="正在登录..."
@@ -9,7 +9,7 @@
                  ref="loginForm"
                  :model="loginForm"
                  class="loginContainer">
-            <h3 class="loginTitle">系统登录</h3>
+            <h3 class="loginTitle">云E办系统</h3>
             <el-form-item prop="username">
                 <!--prop中的名称与校验规则中的属性名称相对性-->
                 <el-input type="text" autocomplete="false" v-model="loginForm.username" placeholder="请输入用户名"></el-input>
@@ -85,6 +85,14 @@ export default {
 </script>
 
 <style>
+.background{
+    background: url("../../public/bg2.jpg");
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-size: 110%;
+}
+
 .loginContainer {
     width: 350px;
     border-radius: 15px;
@@ -97,6 +105,9 @@ export default {
 
 .loginTitle {
     text-align: center;
+    color: white;
+    font-size: 24px;
+    letter-spacing:10px;
 }
 
 .loginRemember {

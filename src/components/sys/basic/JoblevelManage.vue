@@ -39,7 +39,7 @@
                 </el-table-column>
             </el-table>
         </div>
-        <el-dialog title="编辑职称" :visible.sync="dialogFormVisible" width="25%">
+        <el-dialog title="编辑职称" :visible.sync="dialogFormVisible" :close-on-click-modal="false" width="25%">
             <div>
                 <el-tag>职称名称</el-tag>
                 <el-input v-model="updateJobLevel.name" size="small" style="width: 350px; margin-left: 10px;"></el-input>
@@ -61,8 +61,8 @@
                            active-text="已启用" inactive-text="已禁用"></el-switch>
             </div>
             <span slot="footer" class="dialog-footer">
-                <el-button size="small" type="primary" @click="doUpdate">确 定</el-button>
                 <el-button size="small" @click="dialogFormVisible = false">取 消</el-button>
+                <el-button size="small" type="primary" @click="doUpdate">确 定</el-button>
             </span>
         </el-dialog>
     </div>

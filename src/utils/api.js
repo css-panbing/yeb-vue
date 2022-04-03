@@ -16,7 +16,7 @@ axios.interceptors.request.use(config => {
     return config;
 }, error => {
     //Message 拥有可控的duration，设置0为不会被自动关闭，默认为 3000 毫秒
-    Message.error({message: "请求拦截异常："+error, showClose: true, duration: 5000})
+    Message.error({message: "请求异常："+error, showClose: true, duration: 5000})
 })
 
 /**

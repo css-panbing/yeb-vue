@@ -1,0 +1,8 @@
+/*全局Dialog头部公共样式*/
+.el-dialog__header{
+    background-color: #0be9d7;
+    padding: 20px 20px 20px;
+}
+.el-dialog__headerbtn{
+    top: 25px;
+}

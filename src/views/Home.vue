@@ -5,22 +5,21 @@
             <el-header class="homeHeader">
                 <div class="title">云E办</div>
                 <el-dropdown class="userInfo" @command="handleCommand">
-          <span class="el-dropdown-link">
-            {{ userInfo.name }}<i><img :src="userInfo.userFace"></i>
-            <el-icon class="el-icon--right">
-              <arrow-down/>
-            </el-icon>
-          </span>
+                    <span class="el-dropdown-link">
+                      {{ userInfo.name }}<i><img :src="userInfo.userFace"></i>
+                      <el-icon class="el-icon--right">
+                        <arrow-down/>
+                      </el-icon>
+                    </span>
                     <el-dropdown-menu>
                         <el-dropdown-item command="userInfo">个人中心</el-dropdown-item>
                         <el-dropdown-item command="setting">设置</el-dropdown-item>
                         <el-dropdown-item command="logout">注销</el-dropdown-item>
-                    </el-dropdown-menu>
+                </el-dropdown-menu>
                 </el-dropdown>
-
             </el-header>
             <el-container>
-                <el-aside width="200px">
+                <el-aside width="200px" style="overflow: hidden;">
                     <el-menu router unique-opened>
                         <el-submenu :index="index+''"
                                     v-for="(item, index) in routes" :key="index">

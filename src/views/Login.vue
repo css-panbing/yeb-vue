@@ -86,7 +86,6 @@ export default {
 
 <style>
 .background{
-    background: url("../../public/bg2.jpg");
     width: 100%;
     height: 100%;
     position: fixed;

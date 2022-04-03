@@ -7,6 +7,7 @@ import router from "@/router"
 import store from "@/store"
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import '/public/css/public.css'
 import 'font-awesome/css/font-awesome.css'
 import {initMenu} from "@/utils/menu";
 import {getRequest} from "@/utils/api";

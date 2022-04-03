@@ -30,7 +30,7 @@
             </el-table>
         </div>
 
-        <el-dialog title="新增部门" :visible.sync="dialogFormVisible" width="600px" >
+        <el-dialog title="新增部门" :visible.sync="dialogFormVisible" :close-on-click-modal="false" width="600px" >
             <el-form ref="deptForm" :model="dept" :rules="rules" label-width="80px">
                 <el-row>
                     <el-col>
@@ -47,8 +47,8 @@
                     </el-col>
                 </el-row>
                 <el-row style="text-align: right;">
-                    <el-button size="small" type="primary" @click="addDept">确 定</el-button>
                     <el-button size="small" @click="dialogFormVisible = false">取 消</el-button>
+                    <el-button size="small" type="primary" @click="addDept">确 定</el-button>
                 </el-row>
             </el-form>
         </el-dialog>

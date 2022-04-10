@@ -11,8 +11,10 @@ export const initMenu = (router, store) =>{
             let fmtRoutes = formatRoutes(resp);
             //添加到路由
             router.addRoutes(fmtRoutes);
-            //将数据存入Vuex中
+            //将数据存入Vuex中(mutations中用commit)
             store.commit("initRoutes", fmtRoutes);
+            //连接webSocket(actions中用dispatch)
+            store.dispatch('connect');
         }
     })
 }

@@ -4,6 +4,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from "@/views/Login";
+import Home from "@/views/Home";
+import OnlineChat from "@/views/chat/OnlineChat";
 
 Vue.use(VueRouter)
 
@@ -15,6 +17,18 @@ const routes = [
         component: Login,
         hidden: true
     },
+    {
+        path: '/home',
+        name: 'Home',
+        component: Home,
+        children:[
+            {
+                path: '/chat',
+                name: '在线聊天',
+                component: OnlineChat
+            }
+        ]
+    }
 ]
 
 const router = new VueRouter({

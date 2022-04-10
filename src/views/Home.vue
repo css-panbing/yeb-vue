@@ -4,19 +4,23 @@
         <el-container>
             <el-header class="homeHeader">
                 <div class="title">云E办</div>
-                <el-dropdown class="userInfo" @command="handleCommand">
-                    <span class="el-dropdown-link">
-                      {{ userInfo.name }}<i><img :src="userInfo.userFace"></i>
-                      <el-icon class="el-icon--right">
-                        <arrow-down/>
-                      </el-icon>
-                    </span>
-                    <el-dropdown-menu>
-                        <el-dropdown-item command="userInfo">个人中心</el-dropdown-item>
-                        <el-dropdown-item command="setting">设置</el-dropdown-item>
-                        <el-dropdown-item command="logout">注销</el-dropdown-item>
-                </el-dropdown-menu>
-                </el-dropdown>
+                <div>
+                    <el-button type="text" icon="el-icon-message-solid" size="normal"
+                               @click="toChat" style="margin: auto 5px 0 auto;"></el-button>
+                    <el-dropdown class="userInfo" @command="handleCommand">
+                        <span class="el-dropdown-link">
+                          {{ userInfo.name }}<i><img :src="userInfo.userFace"></i>
+                          <el-icon class="el-icon--right">
+                            <arrow-down/>
+                          </el-icon>
+                        </span>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item command="userInfo">个人中心</el-dropdown-item>
+                            <el-dropdown-item command="setting">设置</el-dropdown-item>
+                            <el-dropdown-item command="logout">注销</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                </div>
             </el-header>
             <el-container>
                 <el-aside width="200px" style="overflow: hidden;">
@@ -69,6 +73,10 @@ export default {
         },
     },
     methods: {
+        //跳转到在线聊天
+        toChat(){
+            this.$router.push('/chat');
+        },
         handleCommand(command) {
             if (command == 'userInfo') {
                 Message.info("用户中心")

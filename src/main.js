@@ -20,7 +20,7 @@ router.beforeEach((to, from, next) => {
         if (!window.sessionStorage.getItem("userInfo")) {
             return getRequest("/admin/info").then(resp => {
                 if (resp) {
-                    console.log("用户信息：" + JSON.stringify(resp));
+                    // console.log("用户信息：" + JSON.stringify(resp));
                     //存入用户信息
                     window.sessionStorage.setItem("userInfo", JSON.stringify(resp))
                     next();
